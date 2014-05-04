@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="Author" content="Jason Hedlund, Eric Ghazal, Terrence Luther, Andrew Carter">
+
+    <meta name="Description" content="DEM Plugin for Blender">
+
+    <meta name="Keywords" content="DEM, DTM, flyover, 3D image, blender, USGS, NAU">
+
+    <title>SpaceBlenders</title>
+    
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/styl.css" type="text/css">
+        
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    
+    <!-- *********  Header  ********** -->
+
+    <div id="header">
+        <div id="header_in">
+
+            <h1 style="color: #CC6600">Team SpaceBlender</h1>
+
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html" class="active">Project Home</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="documents.html">Documentation</a></li>
+                    <li><a href="user_guide.html" target="_blank">User Guide</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- *********  Main part (slider)  ********** -->
+    
+        
+        <div id="main_part">
+            <div id="main_part_in">
+        
+            <h2>SpaceBlenders Plug-in for Blender</h2>
+            
+            <p><FONT COLOR="#CC6600">Simplifying creating 3d images and flyover animations of DEM images</FONT></p>
+            
+            </div>
+
+            
+        </div>
+        
+        
+        <!-- *********  Content  ********** -->
+        
+        <div id="content">
+
+            <div class="thirds">
+                <h3>Who is this project for?</h3>
+                <p>We created this Blender plug-in as a capstone project for NAU in conjuction with the USGS. However our plug-in is open source, which means it's free and available to everyone.</p>
+            </div>
+            
+            <div class="thirds">
+                <h3>What does the plug-in do?</h3>
+                <p>Our plugin for Blender automates the process of creating 3D images and flyover animations of DEM images.</p>
+            </div>
+            
+            <div class="thirds">
+                <h3>How do I use the plug-in?</h3>
+                <p>Our plug-in works on Mac/Linux/Windows. For a detailed look at how to install the necessary tools to start using the plug-in check out our user guide.</p>
+            </div>
+            
+            <hr class="cleanit">
+            
+            <div class="banner1">
+                <p>Looking to download our Blender plug-in<p>
+                <a href="https://github.com/SpaceBlender/SpaceBlender/archive/master.zip" class="button_dark">GRAB IT HERE</a>
+            </div>
+                
+                
+            <!-- ****  Project Description ***** -->
+            
+            <h3>Project Goals:</h3>
+
+            <div id ="goals">
+
+            <ul>
+                <li>Better integrate the GDAL raster library to load Digital Elevation Models (DEMs) into Blender</li>
+                <li>Create and overlay color hill shaded textures for DEM images from Blender using exiting GDAL binaries</li>
+                <li>Define predefined fly-over tracks for the 3D model for rendering an animation</li>
+                <li>Automate Flyover animation video creation, exporting to .mp4</li>
+                <li>Make this whole process as automated as possible</li>
+            </ul>
+
+            </div>
+
+            <h3>Some sample image textures:</h3>
+
+            <div class="fourths_portfolio">
+                <h4>Download Image<br>
+                    <span>in detail</span>
+                </h4>
+                <a href="img/text1.tiff"><img src="img/portfolio1.png" alt="item1"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>Download Image<br>
+                    <span>in detail</span>
+
+                </h4>
+                <a href="img/text2.tiff"><img src="img/portfolio2.png" alt="item2"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>Download Image<br>
+                    <span>in detail</span>
+                </h4>
+                <a href="img/text3.tiff"><img src="img/portfolio3.png" alt="item3"></a>
+            </div>
+            
+            <div class="fourths_portfolio">
+                <h4>Download Image<br>
+                    <span>in detail</span>
+                </h4>
+                <a href="img/text4.tiff"><img src="img/portfolio4.png" alt="item4"></a>
+            </div>
+
+            <h3>Sample of a Linear Flyover Video:</h3>
+            <div style="text-align: center;"><video width="896" height="504" controls="">
+                <source src="img/video.m4v" type="video/mp4"></video></div>
+
+            <hr class="cleanit">
+
+
+            <!-- ****  About & Testimonials  ***** -->
+
+
+            <div class="about_blok">
+                <h3>About Us</h3>
+                <p class="about">We are a creative team of young software engineers. Our team has a wide range of experience and talents. This project is our senior capstone project in the Northern Arizona University CS degree program.
+                This project has been done in conjunction with Trent Hare of the USGS in Flagstaff, Arizona.</p>
+
+                <a href="team.html" class="button_light">LEARN MORE</a>
+            </div>
+
+
+            <div class="acknowledgements">
+                <div class="note">We would like to thank Tim Spriggs of UAHiRise for the original Blender DEM import plug-in we started with. Information on his plugin can be found  <a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Import-Export/HiRISE_DTM_from_PDS_IMG">here. </a></div>
+
+                <div class="note">We would also like to thank Trent Hare of the USGS for being a great project sponsor, and supplying the <a href="http://svn.osgeo.org/gdal/trunk/gdal/swig/python/samples/hsv_merge.py">HSV_Merge</a> script we used in this project for creating textures.</div>
+
+                <div class="note">Dr. James Palmer, thank you for being our mentor and our harshest critic.</div>
+                <span class="acknowledgements_bottom"></span>
+
+                <ul class="controls">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <span class="by">Acknowledgements</span>
+            </div>
+
+        </div>
+    <!-- *********  Footer  ********** -->
+
+    <hr class="cleanit">
+
+    <div id="footer">
+        <div id="footer_in">
+            <p style="color: #ffffff">2014 Capstone Team - Northern Arizona University</p>
+        </div>
+    </div>
+
+    <script>
+        // script for acknowledgement tabs
+        $(function() {
+            $("ul.controls").tabs("div.acknowledgements > div");
+        });
+    </script>
+</body>
+</html>

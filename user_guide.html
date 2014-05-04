@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="Author" content="Jason Hedlund">
+
+    <meta name="Description" content="DEM Plugin for Blender">
+
+    <meta name="Keywords" content="DEM,DTM, flyover, 3D image, blender, USGS, NAU">
+
+    <title>Plug-in User Guide</title>
+
+    <link rel="stylesheet" href="css/styl.css" type="text/css">
+
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+        
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <!-- *********  No Header to clean up user guide page ********** -->
+
+    
+    <!-- *********  Main part – headline ********** -->
+    
+        
+        <div id="main_part_inner">
+            <div id="main_part_inner_in">
+        
+            <h2>Blender Plug-in User Guide</h2>
+            </div>
+            
+        </div>
+        
+        
+        <!-- *********  Content  ********** -->
+        
+        <div id="content_inner" style="height: 600px;">
+
+        <a name="page_top">&nbsp;</a>
+        <!--Github link-->
+        <a href="https://github.com/SpaceBlender/SpaceBlender/fork"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+        <div class="container">
+        <div id="team">
+        <div class="row">
+        <div class="span3">
+            <div id="sidebar" class="sidebar">
+
+                <ul class="nav nav-list">
+                    <li class="active"><a href="#article_0">Table of Contents</a></li>
+                    <li class=""><a href="#article_0">Overview</a></li>
+                    <li><a href="">Setting Up the Environment</a></li>
+                    <ul class="nav nav-list">
+                        <li><a href="#article_3" class="articleTitle">Mac</a></li>
+                    </ul>
+                    <ul class="nav nav-list">
+                        <li><a href="#article_4" class="articleTitle">Linux</a></li>
+                    </ul>
+                    <ul class="nav nav-list">
+                        <li><a href="#article_5" class="articleTitle">Windows</a></li>
+                    </ul>
+                    <li><a href="#article_6">Download Blender Plug-in</a></li>
+                    <li><a href="#article_7">Installing the Blender Plug-in</a></li>
+                    <ul class="nav nav-list">
+                        <li><a href="#article_8">Activate the Plug-in</a></li>
+                    </ul>
+                    <li><a href="#article_9">Creating a 3D Image</a></li>
+                    <li><a href="#article_10">Creating a Flyover Video</a></li>
+                    <li><a href="#article_11">Setting Rendering Options</a></li>
+                    <li><button type="button" class="btn btn-warning"><a href="https://docs.google.com/forms/d/1hJitYOAXiZwCjTp-n-aCmnhTTlsRXodqbv4xePVfdDM/viewform" style="color: #ffffff"><strong>Please take our Usability Survey</strong></a></button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="span9">
+
+        <h1>SpaceBlenders Plug-in for Blender</h1>
+
+        <h1>User Manual</h1>
+
+        <div class="article">
+            <a name="article_0">&nbsp;</a>
+
+            <h3>Overview</h3>
+
+            <div class="article_details">
+                <p>
+                    The SpaceBlenders plugin for Blender is designing to simplify the processing of DEM images
+                    in Blender.
+                    We have automated GDAL image procesing tools to create image textures simply by picking a
+                    color scheme.
+                    These textures are pre-applied to your DEM image during the import process into Blender.
+                    Creating a 3D
+                    image is as simple as selecting a couple options and clicking render. We have also taken the
+                    hassle out of
+                    creating flyover videos. Our plug-in has several pre-defined flyover paths that can be
+                    selected before importing
+                    your image. Once the image is imported a flyover video is created by simply clicking on
+                    render animation. This user guide
+                    will give you an overview of how to use our plug-in.
+                </p>
+                <li><strong>Platforms</strong></li>
+                <p>Our plug-in has been made cross-platform compatible for Mac, Linux, and Windows</p>
+                <img src="img/Apple-icon.png" width="48" height="48">
+                <img src="img/Linux-icon.png" width="48" height="48">
+                <img src="img/Windows-icon.png" width="48" height="48">
+            </div>
+        </div>
+
+        <div class="article">
+            <a name="article_1">&nbsp;</a>
+
+            <h3>Required Tools</h3>
+
+            <div class="article_details">
+                <p>Before the plug-in will work in Blender it is imperative that the following tools are
+                    installed and tested.</p>
+                <ol>
+                    <li><strong>Blender 2.69</strong></li>
+                    <li><strong>Python 2.7+</strong></li>
+                    <li><strong>GDAL 1.10</strong></li>
+                </ol>
+
+            </div>
+        </div>
+
+        <div class="article">
+            <a name="article_3">&nbsp;</a>
+            <!--Mac Setup-->
+            <h3>Setting up the Environment on a Mac</h3>
+            <img src="http://www.blender.org/wp-content/themes/bthree/assets/images/logo.png"/>
+            <h4>Install Blender</h4>
+            <li>Download Blender 2.69 from <a href="http://download.blender.org/release/Blender2.69/">here.</a>
+            </li>
+            <li>Select the approraite version 32/64-bit for your system.</li>
+            <li>Follow the on screen install instruction.</li>
+            <li>After installing Blender we need to add it to your path.</li>
+            Type the following commands in Terminal:
+    <pre><code>
+  echo "alias blender=/Applications/Blender/blender.app/Contents/MacOS/blender" >> ~/.profile
+  source ~/.bash_profile
+    </code></pre>
+            <p>You should now be able to type the command: <code>blender --version</code> into Terminal and get
+                the details on
+                your version of Blender. Now Blender can be launched simply by typing <code>blender</code> into
+                Terminal.</p>
+
+
+            <img src="https://www.python.org/static/community_logos/python-logo.png"/>
+            <h4>Check your Python</h4>
+            <li>Mac's come with Python 2.7 pre-installed.</li>
+            You can check your Python version by typing the following command into Terminal:
+    <pre><code>
+    python --version
+    </code></pre>
+            <p>You should see: <code>Python 2.7.5</code>, or greater.
+                Our plug-in works with all Python 2.7+, if you need to upgrade your Python version click <a
+                        href="https://www.python.org/download/">here.</a></p>
+
+            <img src="http://trac.osgeo.org/gdal/chrome/site/trac_logo.png/"/>
+            <h4>Install GDAL</h4>
+            <li>Download and Install GDAL 1.10 Complete from <a
+                    href="http://www.kyngchaos.com/software/frameworks">here.</a></li>
+            <li>After install add GDAL to your path.</li>
+            Copy and paste the below code into Terminal:
+    <pre><code>
+    echo 'export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH' &gt;&gt; ~/.bash_profile
+    source ~/.bash_profile
+    </code></pre>
+            You should now be able to test your GDAL installation by typing the following in terminal:
+    <pre><code>
+    $ gdalinfo --version
+    </code></pre>
+            If installation is successful you should see:
+            <code>GDAL 1.10.1, released 2013/08/26</code>
+
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        <div class="article">
+            <a name="article_4">&nbsp;</a>
+            <!--Linux Setup-->
+            <h3>Setting up the Environment in Linux</h3>
+            <img src="http://www.blender.org/wp-content/themes/bthree/assets/images/logo.png"/>
+            <h4>Install Blender</h4>
+            <li>Download Blender 2.69 from <a href="http://download.blender.org/release/Blender2.69/">here.</a>
+            </li>
+            <li>Select the approraite version 32/64-bit for your system.</li>
+            <li>Follow the on screen install instruction.</li>
+            <li>Blender should be callable from Terminal by typing: <code>blender</code></li>
+
+
+            <img src="https://www.python.org/static/community_logos/python-logo.png"/>
+
+            <h4>Check your Python</h4>
+            <li>Linux Distros should come with Python pre-installed.</li>
+            You can check your Python version by typing the following command into Terminal:
+    <pre><code>
+    python --version
+    </code></pre>
+            <p>You should see: <code>Python 2.7.5</code>, or greater.
+                Our plug-in works with all Python 2.7+, if you need to upgrade your Python version click <a
+                        href="https://www.python.org/download/">here.</a></p>
+
+
+            <img src="http://trac.osgeo.org/gdal/chrome/site/trac_logo.png/"/>
+            <h4>Install GDAL</h4>
+            <li>For Ubuntu based Linux distribution install GDAL with your package manager.</li>
+    <pre><code>
+    sudo apt-get install gdal-bin
+    </code></pre>
+
+            <li>For other distributions, search your package repository for 'gdal',
+                or see OSGEO's GDAL Binaries information <a
+                        href="http://trac.osgeo.org/gdal/wiki/DownloadingGdalBinaries">here.</a></li>
+
+            You should now be able to test your GDAL installation by typing the following in terminal:
+    <pre><code>
+    $ gdalinfo --version</code>
+    </pre>
+            If installation is successful you should see:
+            <code>GDAL 1.10.1, released 2013/08/26</code>
+
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+
+        <div class="article">
+            <a name="article_5">&nbsp;</a>
+            <!--Windows Setup-->
+            <h3>Setting up the Environment in Windows</h3>
+            <img src="http://www.blender.org/wp-content/themes/bthree/assets/images/logo.png"/>
+            <h4>Install Blender</h4>
+            <li>Download Blender 2.69 from <a href="http://download.blender.org/release/Blender2.69/">here.</a>
+            </li>
+            <li>Select the appropriate version 32/64-bit for your systemn</li>
+            <li>Add the Blender program to your path by typing the following in the cmd prompt:
+    <pre><code>
+    set PATH=%PATH%;C:\Program Files\Blender Foundation\Blender\;
+    </code></pre>
+                You should now be able to run Blender by typing: <code>blender</code> into the cmd prompt.
+            </li>
+
+
+            <img src="http://trac.osgeo.org/osgeo4w/chrome/site/osgeo4w-logo.png"/>
+            <h4>Install GDAL</h4>
+            <li>Download and Install OSGEO4W from <a href="https://trac.osgeo.org/osgeo4w/">here.</a></li>
+            <p>OSGEO4W contains GDAL, Python 2.7.5 and Numpy.</p>
+            <li>After install add OSGEO4W to your path by typing the following in the cmd prompt:
+    <pre><code>
+    set PATH=%PATH%;C:\OSGeo4W64
+    </code></pre>
+            </li>
+            <li>Typing <code>OSGEO4W</code> into the cmd prompt should display info on the OSGEO4W package.</li>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+
+        <div class="article">
+            <a name="article_6">&nbsp;</a>
+            <h3>Download the Blender Plug-in</h3>
+            <li>Click the following link to download the plug-in:</li>
+    <pre><code>
+        <a href="https://github.com/SpaceBlender/USGS/archive/master.zip">SpaceBlender Plug-in for Blender</a>
+    </code></pre>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        <div class="article">
+            <a name="article_7">&nbsp;</a>
+            <h3>Install the Blender Plug-in</h3>
+            <li>Unzip the plugin and put the whole folder in the Blender addons directory:</li>
+            <li>For <strong>Mac</strong>:</li>
+            <ul>Paste the following folder address into Terminal:</ul>
+    <pre><code>
+        open /Applications/Blender/blender.app/Contents/MacOS/2.69/scripts/addons
+    </code></pre>
+            <ul>This will open a finder window in the Blender addon directory.</ul>
+            <ul>Drag and drop the entire folder into the directory.</ul>
+
+            <li>For <strong>Linux</strong>:</li>
+            <ul>From your file browser click on File System > usr > share > blender </ul>
+            <ul>In the Blender folder click 2.69 > scripts > addons</ul>
+            <ul>Then drag and drop the entire folder into the directory</ul>
+
+
+            <li>For <strong>Windows</strong>:</li>
+            <ul>Paste the following into the cmd prompt and hit enter:</ul>
+    <pre><code>
+    explorer C:\Program Files\Blender Foundation\Blender\2.69\scripts\addons
+    </code></pre>
+            <ul>This will open an explorer window in the Blender addon directory.</ul>
+            <ul>Drag and drop the entire folder into the directory.</ul>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        <div class="article">
+            <a name="article_8">&nbsp;</a>
+            <h3>Activate the Blender Plug-in</h3>
+            <li>Open Blender and go to File > User Preferences</li>
+            <img src="img/file_menu.png" width="430" height="430"/>
+            <p></p>
+            <li>Click on the Addons tab and search for dem in the upper left corner.</li>
+            <li>Select Import-Export: Import and SpaceBlend DEM (.IMG)</li>
+            <li>Click the check box in the right upper corner of the window to activate the plug-in.</li>
+            <li>Click Save User Settings on the bottom of the window, and close the window.</li>
+            <img src="img/addon_menu.png" width="750" height="500"/>
+            <p></p>
+            <li>The plugin is now ready to use and can be found in the import menu.</li>
+            <img src="img/import_menu.png" width="430" height="430"/>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        <div class="article">
+            <a name="article_9">&nbsp;</a>
+            <h3>Creating a 3D Image</h3>
+            <li>To create a 3D image of your DEM select the plugin from File > Import</li>
+            <img src="img/import_menu.png" width="430" height="430"/>
+            <p></p>
+            <li>Next, select your DEM image in the User Interface</li>
+            <img src="img/ui_view.png"/>
+            <p></p>
+            <li>Select the options for your image in the lower left corner of the UI</li>
+            <li>Choose a color pattern and make sure No flyover is selected</li>
+            <img src="img/color_select.png" width="430" height="430"/>
+            <p></p>
+            <li>Now click the Import button to start the import process</li>
+            <ul>Note: The import process can take several minutes depending on your image size</ul>
+            <img src="img/import_button.png"/>
+            <p></p>
+            <li>Once the image import is complete the main Blender window will reappear</li>
+            <li>To render your image click Render > Render image</li>
+            <img src="img/render_button.png" width="430" height="430"/>
+            <p></p>
+            <li>You have now created your 3D image</li>
+            <img src="img/processed_image.png"/>
+            <p><a href="#page_top">back to top</a></p>
+            </div>
+
+        <div class="article">
+            <a name="article_10">&nbsp;</a>
+            <h3>Creating a 3D Flyover Video</h3>
+            <li>To create a flyover video of your DEM select the plugin from File > Import</li>
+            <img src="img/import_menu.png" width="430" height="430"/>
+            <p></p>
+            <li>Next, select your DEM image in the User Interface</li>
+            <img src="img/ui_view.png"/>
+            <p></p>
+            <li>Select the options for your flyover video in the lower left corner of the UI</li>
+            <li>Choose a color pattern</li>
+            <img src="img/color_select.png" width="430" height="430"/>
+            <p></p>
+            <li>Choose a flyover pattern</li>
+            <img src="img/pattern.png" width="430" height="430"/>
+            <p></p>
+            <li>Choose the resolution for your flyover video</li>
+            <img src="img/res.png" width="430" height="430"/>
+            <p></p>
+            <li>Now click the Import button to start the import process</li>
+            <ul>Note: The import process can take several minutes depending on your image size</ul>
+            <img src="img/import_button.png"/>
+            <p></p>
+            <li>Once the image import is complete the main Blender window will reappear</li>
+            <li>To render your flyover video click Render > Render animation</li>
+            <img src="img/renderan.png" width="430" height="430"/>
+            <p></p>
+            <li>You have now created your flyover video. </li>
+            <li>Rendering will take several minutes to several hours based on the resolution you selected.</li>
+            <li>Your video will be saved in your current directory as an mp4 video.</li>
+            <img src="img/renderscreen.png"/>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        <div class="article">
+            <a name="article_11">&nbsp;</a>
+            <h3>Changing Rendering options</h3>
+            <li>The menu to set or change rendering options is on the left side of the main Blender window.</li>
+            <img src="img/render_menu.png"/>
+            <p></p>
+            <li>You can change the resolution.</li>
+            <li>You can also set the start and end frames of your video, which will change the video length.</li>
+            <img src="img/frames.png" width="430" height="430"/>
+            <p></p>
+            <li>You can set the location that your video will be saved under the output menu.</li>
+            <li>You can set it by entering the output path or selecting the file chooser.</li>
+            <img src="img/output_path.png" width="430" height="430"/>
+            <p></p></p>
+            <li>Blender supports many video exporting formats.</li>
+            <li>Blender can also render individual image frames that can be compiled into a video later.</li>
+            <li>To change the video format click on the drop down menu shown, and select a format.</li>
+            <img src="img/encode_setting1.png" width="430" height="430"/>
+            <p></p>
+            <li>After choosing the format, click on encoding menu, and then the encoding drop down menu, to choose an encoding for your video.</li>
+            <img src="img/encode_setting2.png" width="430" height="430"/>
+            <p></p>
+            <p><a href="#page_top">back to top</a></p>
+        </div>
+
+        </div>
+          </div>
+         </div>
+        </div>
+        <p style="color: #CC6600">2014 Capstone Team - Northern Arizona University</p>
+        <p style="color: #CC6600">Note: All images used in this user-guide are the trademarks of their respective companies.
+            We are not claiming any affiliation with any of these companies, and do not mean to infringe on copyrighted material.</p>
+      </div>
+
+</body>
+</html>
